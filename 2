@@ -1,0 +1,11 @@
+fibo=[1,1,2]
+for i in range(3,50):
+    fibo.append(fibo[i-2]+fibo[-1])
+fibo_line=tuple(fibo)
+vector=[int(i) for i in input().split()]
+for i in range(len(vector)):
+    cur=vector[i]
+    if cur in fibo_line:
+        ind=fibo_line.index(cur)
+        vector[i]=fibo_line[ind+1]
+print(*vector)
